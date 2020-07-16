@@ -22,26 +22,5 @@ stages{
     		)
   		}
 	}
-		stage('Docker '){
-		steps{
-			echo "Docker"
-			//sh ' pwd '
-		    //sh "mvn clean package"	
-			//sh './docker-build.sh'
-			//sh 'eval $(minikube docker-env)'
-		}
-	}
-		stage('Kubernetes deploy '){
-		steps{
-			//echo "Kubernetes deploy"
-            //sh 'kubectl apply -f microservices.yaml'
-            //sh './kubernetes-deploy.sh'
-            //sh ' kubectl describe services '
-            //sh 'minikube service apache '
-            
-            
-        }
-	}
-
-	}
+}
 }
