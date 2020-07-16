@@ -19,11 +19,9 @@ stages{
         			//publish test cases report 
       			},
       			Code_Quality_Analysis: {
-      				stage('sonarQube'){
       					environment{
       						scannerHome = tool 'SonarQubeScanner'      						
       					}
-      					steps{
       						withSonarQubeEnv('sonarqube'){
       							sh "${scannerHome}/bin/sonar-scanner"
       						}
@@ -31,8 +29,8 @@ stages{
       							waitForQualityGate abortPipeline: true
       						}
       						
-      					}
-      				}
+      					
+      				
         			
         			//publish code quality report 
       			},
