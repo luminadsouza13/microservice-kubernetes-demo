@@ -87,8 +87,11 @@ pipeline {
                 branchName = getCurrentBranch()
                 shortCommitHash = getShortCommitHash()
                 IMAGE_VER = "${BUILD_NUMBER}-" + branchName + "-" + shortCommitHash
-                sh 'eval $(minikube docker-env)'
-                sh "./docker-build.sh"
+                sh '''
+                	eval $(minikube docker-env)
+                	./docker-build.sh
+                	docker images
+                	'''
             }
         }
     }
