@@ -28,7 +28,6 @@ pipeline {
             script {
                 notifyBuild('STARTED')
                 echo "${BUILD_NUMBER} - ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                echo "Branch Specifier :: ${params.SPECIFIER}"
                 echo "Deploy to QA? :: ${params.DEPLOY_QA}"
                 echo "Deploy to UAT? :: ${params.DEPLOY_UAT}"
                 echo "Deploy to PROD? :: ${params.DEPLOY_PROD}"
@@ -38,7 +37,9 @@ pipeline {
     }
     stage('Checkout') {
         steps {
-         git branch: "${params.SPECIFIER}", url: "${GIT_URL}, credentialsId: 'github'"
+    //     git branch: "${params.SPECIFIER}", url: "${GIT_URL}", credentialsId: 'github'
+        git branch: "master", credentialsId: 'github', url: '${GIT_URL}'
+         
         }
     }
     stage('Build') {
