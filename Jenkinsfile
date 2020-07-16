@@ -74,7 +74,7 @@ pipeline {
         		//Archieve using jenkins
         		stage('ArchiveArtifact') {
                     steps {
-                        archiveArtifacts '**/target/*.zip'
+                        archiveArtifacts '**/target/*'
                     }
                 }
       				
