@@ -23,7 +23,7 @@ pipeline {
 }
 
   stages {
-    stage("Initialize") {
+    stage("Initialize1") {
         steps {
             script {
                 notifyBuild('STARTED')
