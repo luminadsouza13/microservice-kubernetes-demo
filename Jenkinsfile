@@ -38,7 +38,7 @@ pipeline {
     stage('Checkout') {
         steps {
     //     git branch: "${params.SPECIFIER}", url: "${GIT_URL}", credentialsId: 'github'
-        git branch: "master", credentialsId: 'github', url: '${GIT_URL}'
+        git branch: "master", credentialsId: "github", url: "https://github.com/reeshu13489/microservice-kubernetes-demo"
          
         }
     }
