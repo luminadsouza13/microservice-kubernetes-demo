@@ -1,0 +1,6 @@
+/Users/rj/Documents/DEVOPS/Docker/ASSIGNMENTS_ROGERS/microservice-kubernetes/microservice-kubernetes-demo/microservice-kubernetes-demo-order/src/test/java/com/ewolff/microservice/order/logic/OrderWebIntegrationTest.java
+/Users/rj/Documents/DEVOPS/Docker/ASSIGNMENTS_ROGERS/microservice-kubernetes/microservice-kubernetes-demo/microservice-kubernetes-demo-order/src/test/java/com/ewolff/microservice/order/logic/CustomerConsumerDrivenContractTest.java
+/Users/rj/Documents/DEVOPS/Docker/ASSIGNMENTS_ROGERS/microservice-kubernetes/microservice-kubernetes-demo/microservice-kubernetes-demo-order/src/test/java/com/ewolff/microservice/order/logic/CatalogConsumerDrivenContractTest.java
+/Users/rj/Documents/DEVOPS/Docker/ASSIGNMENTS_ROGERS/microservice-kubernetes/microservice-kubernetes-demo/microservice-kubernetes-demo-order/src/test/java/com/ewolff/microservice/order/OrderTestApp.java
+/Users/rj/Documents/DEVOPS/Docker/ASSIGNMENTS_ROGERS/microservice-kubernetes/microservice-kubernetes-demo/microservice-kubernetes-demo-order/src/test/java/com/ewolff/microservice/order/catalogstub/CatalogStub.java
+/Users/rj/Documents/DEVOPS/Docker/ASSIGNMENTS_ROGERS/microservice-kubernetes/microservice-kubernetes-demo/microservice-kubernetes-demo-order/src/test/java/com/ewolff/microservice/order/customerstub/CustomerStub.java
