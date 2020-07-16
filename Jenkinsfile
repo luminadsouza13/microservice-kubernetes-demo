@@ -1,6 +1,10 @@
 pipeline{
 
 // In this example, all is built and run from the master
+  environment{
+      		scannerHome = tool 'SonarQubeScanner'      						
+  }
+
 agent { node {label 'master'} }
 stages{
 	stage('Compile and Build '){
@@ -13,29 +17,19 @@ stages{
 	stage('Run Test cases , code quality check ,  '){
 		steps {
     		parallel(
-      			TEST_CASES: {
-        			echo "This is branch a"
-        			//run test cases
-        			//publish test cases report 
-      			},
       			Code_Quality_Analysis: {
-      					environment{
-      						scannerHome = tool 'SonarQubeScanner'      						
-      					}
-      						withSonarQubeEnv('sonarqube'){
-      							sh "${scannerHome}/bin/sonar-scanner"
-      						}
-      						timeout(time: 10, unit: 'MINUTES'){
-      							waitForQualityGate abortPipeline: true
-      						}
-      						
-      					
-      				
-        			
+      			stage('SonarQube'){
+      				steps{
+      				      		withSonarQubeEnv('sonarqube'){
+      								sh "${scannerHome}/bin/sonar-scanner"
+      							}
+      					      	timeout(time: 10, unit: 'MINUTES'){
+      								waitForQualityGate abortPipeline: true
+      							}
+
+      				}
+      			}
         			//publish code quality report 
-      			},
-      			ARTIFACT: {
-        			echo "This is branch b"
       			}
     		)
   		}
