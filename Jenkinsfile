@@ -38,7 +38,7 @@ pipeline {
     }
     stage('Checkout') {
         steps {
-         git branch: "${params.SPECIFIER}", url: "${GIT_URL}"
+         git branch: "${params.SPECIFIER}", url: "${GIT_URL}, credentialsId: 'github'"
         }
     }
     stage('Build') {
