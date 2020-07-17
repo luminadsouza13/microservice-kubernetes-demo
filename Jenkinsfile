@@ -137,7 +137,7 @@ pipeline {
     
     
     }
-    stage('Deploy') {
+    stage('PROD Deploy') {
       steps{
               echo "After approval !!! Deploying to PROD Environment."
            }
