@@ -316,6 +316,7 @@ body {
 </html>
       """,
       to: "luminadsouza13@gmail.com"
+      from: "release_notify_email@group.apple.com"
     )
     
 if (buildStatus == 'FAILURE') {
