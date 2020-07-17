@@ -308,7 +308,7 @@ body {
   </p>
 
   <span class="h2"> CHANGES </span>
-  <p>Get the value what was changed using git </p>
+  <p>Get the value what was changed using github </p>
   </br>
   </br>
     
