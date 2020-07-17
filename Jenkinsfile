@@ -84,7 +84,7 @@ pipeline {
      stage('Docker build , tag and push to repository ') {
      steps {
             script {
-                branchName = getCurrentBranch()
+               	branchName = getCurrentBranch()
                 shortCommitHash = getShortCommitHash()
                 IMAGE_VER = "${BUILD_NUMBER}-" + branchName + "-" + shortCommitHash
                 sh '''
@@ -95,7 +95,8 @@ pipeline {
             }
         }
     }
-    stage('Deploy') {
+  
+     stage('Deploy') {
         parallel{
             stage('QA'){
                 steps{
@@ -108,17 +109,42 @@ pipeline {
                 }
                
             }
+        }
+    }
+   
+    stage("NOTIFY  through Slack with APPROVAL link") {
+        parallel{
+            stage('Approval '){
+                    steps {
+                    // Input Step
+                        timeout(time: 15, unit: "MINUTES") {
+                        input message: 'Do you want to approve the deploy in production?', ok: 'Yes'
+                    }
+                }
+    
+            }
+            stage('Notification with link '){
+                    steps {
+                        script{
+                                //  attachments = attachments()
+                            slackSend color: "good", message: "Click the link below to approve the PROD Build  http://localhost:3000/blue/organizations/jenkins/groovy/detail/groovy/${currentBuild.number}/pipeline ", channel: "#release_notify"
+                        }
+                    }
+        }
+
+
+    }
+    
+    
+    }
+    stage('Deploy') {
             stage('PROD'){
                 steps{
                     echo "After approval !!! Deploying to PROD Environment."
                 }
             }
-                       
-
-        }
     }
-    
-}
+  }
 }
 
 def getShortCommitHash() {
