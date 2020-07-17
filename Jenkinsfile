@@ -84,9 +84,6 @@ pipeline {
      stage('Docker build , tag and push to repository ') {
      steps {
             script {
-               	branchName = getCurrentBranch()
-                shortCommitHash = getShortCommitHash()
-                IMAGE_VER = "${BUILD_NUMBER}-" + branchName + "-" + shortCommitHash
                 sh '''
                 	eval $(minikube docker-env)
                 	./docker-build.sh
@@ -140,8 +137,8 @@ pipeline {
     stage('PROD Deploy') {
       steps{
       		script{
-      		       echo "After approval !!! Deploying to PROD Environment."
-      		       kubectl apply -f microservices.yaml
+      		       echo "Approved!! Deploying to PROD Environment."
+      		       sh ' kubectl apply -f microservices.yaml'
       		}              
            }
   
