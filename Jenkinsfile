@@ -139,7 +139,10 @@ pipeline {
     }
     stage('PROD Deploy') {
       steps{
-              echo "After approval !!! Deploying to PROD Environment."
+      		script{
+      		       echo "After approval !!! Deploying to PROD Environment."
+      		       kubectl apply -f microservices.yaml
+      		}              
            }
   
     }
