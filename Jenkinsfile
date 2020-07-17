@@ -7,12 +7,12 @@ pipeline {
   				label 'master'
   			} 
   		}
-  parameters {
-    string(defaultValue: "develop", description: 'Branch Specifier', name: 'SPECIFIER')
-    booleanParam(defaultValue: false, description: 'Deploy to QA Environment ?', name: 'DEPLOY_QA')
-    booleanParam(defaultValue: false, description: 'Deploy to UAT Environment ?', name: 'DEPLOY_UAT')
-    booleanParam(defaultValue: false, description: 'Deploy to PROD Environment ?', name: 'DEPLOY_PROD')
-}
+  		
+	parameters {
+    	string(defaultValue: "develop", description: 'Branch Specifier', name: 'SPECIFIER')
+    	booleanParam(defaultValue: false, description: 'Deploy to QA Environment ?', name: 'DEPLOY_QA')
+    	booleanParam(defaultValue: false, description: 'Deploy to UAT Environment ?', name: 'DEPLOY_UAT')
+	}
 
   environment {
     APP = 'microservice-kubernetes-demo'
@@ -212,8 +212,109 @@ def notifyBuild(String buildStatus = 'STARTED') {
      // send to email
   emailext (
       subject: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-      body: """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
-        <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+      body: """
+      <!doctype html>
+<html>
+<style>
+body {
+        background-color: #f6f6f6;
+        font-family: sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 14px;
+        line-height: 1.4;
+        margin: 0;
+        padding: 0;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%; 
+      }
+      
+ .preheader {
+        color: transparent;
+        display: none;
+        height: 0;
+        max-height: 0;
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        mso-hide: all;
+        visibility: hidden;
+        width: 0; 
+      }
+      
+  .body {
+        width: 100%; 
+      }
+
+      .container {
+        display: inline;
+        margin: 0 auto !important;
+        /* makes it centered */
+        max-width: 580px;
+        padding: 10px;
+        width: 580px; 
+      }
+
+      .content {
+        box-sizing: border-box;
+        display: block;
+        margin: 0 auto;
+        max-width: 580px;
+        padding: 10px; 
+      }
+      
+      .h2
+      {
+        display: block;
+        background-color: #351bde;
+        color: #ffffff;
+        font-family: sans-serif;
+        font-weight: 400;
+        line-height: 1.4;
+        margin: 0;
+        margin-bottom: 30px; 
+        background-size: 75% 50%;
+      }
+      
+      h1
+      {
+        color: #000000;
+        font-family: optima;
+        font-weight: 400;
+        line-height: 1.4;
+        margin: 0;
+        margin-bottom: 30px; 
+      }
+
+      h1 {
+        font-size: 35px;
+        font-weight: 300;
+        text-align: center;
+        text-transform: capitalize; 
+      }
+
+</style>
+  <head>
+  <title>BUILD Notification Email</title>
+  </head>
+  <body class="">
+  <H1><IMG width="100" height="100" SRC="https://i.gifer.com/15UY.gif">BUILD STARTED</H1>
+  <p>
+  Build URL 		: ${env.BUILD_URL}
+  </br>
+  Project   		: ${env.JOB_NAME}
+  </br>
+  Date of build		: <Use it to generate todays date>
+  </br>
+  </p>
+
+  <span class="h2"> CHANGES </span>
+  <p>Get the value what was changed using git </p>
+  </br>
+  </br>
+    
+  </body>
+</html>
+      """,
       to: "luminadsouza13@gmail.com"
     )
     
