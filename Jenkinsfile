@@ -138,11 +138,10 @@ pipeline {
     
     }
     stage('Deploy') {
-            stage('PROD'){
-                steps{
-                    echo "After approval !!! Deploying to PROD Environment."
-                }
-            }
+      steps{
+              echo "After approval !!! Deploying to PROD Environment."
+           }
+  
     }
   }
 }
