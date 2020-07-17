@@ -315,7 +315,7 @@ body {
   </body>
 </html>
       """,
-      to: "luminadsouza13@gmail.com"
+      to: "luminadsouza13@gmail.com",
       from: "release_notify_email@group.apple.com"
     )
     
