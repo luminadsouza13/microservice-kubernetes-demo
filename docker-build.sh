@@ -3,6 +3,14 @@ export DOCKER_ACCOUNT=luminadsouza13
 if [ -z "$DOCKER_ACCOUNT" ]; then
     DOCKER_ACCOUNT=ewolff
 fi;
+
+                	val=`docker images -f 'dangling=true' -q|wc -l`
+                	echo $val
+                	if [ $val -ne 0 ] 
+			then
+                		echo "remove images"
+			fi
+
 echo $DOCKER_ACCOUNT
 docker build --tag=microservice-kubernetes-demo-apache apache
 docker tag microservice-kubernetes-demo-apache $DOCKER_ACCOUNT/microservice-kubernetes-demo-apache:latest
