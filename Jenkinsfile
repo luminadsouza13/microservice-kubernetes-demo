@@ -45,7 +45,7 @@ pipeline {
     stage('Build') {
             steps {
                 echo 'Run coverage and CLEAN UP Before please'
-                sh   'mvn clean package'
+                sh   'mvn clean package -Dmaven.test.failure.ignore=true'
             }
     }
     stage('Run Test cases , code quality check , Archieve using jenkins'){
