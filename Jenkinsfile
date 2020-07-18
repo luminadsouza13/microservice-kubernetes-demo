@@ -45,14 +45,26 @@ pipeline {
     stage('Build') {
             steps {
                 echo 'Run coverage and CLEAN UP Before please'
-                sh   'mvn clean package -Dmaven.test.failure.ignore=true'
+               // sh   'mvn clean package sonar:sonar site:site surefire-report:report -Dmaven.test.failure.ignore=true'
             }
     }
     stage('Run Test cases , code quality check , Archieve using jenkins'){
 			parallel{
 				stage('Test Cases report'){
       			  steps{
-							echo "Pending"
+							echo "Test Cases Publish "
+							
+							publishHTML (
+							 target : [
+								allowMissing: false,
+ 								alwaysLinkToLastBuild: true,
+ 								keepAll: true,
+ 								reportDir: '**/target/site/surefire-report.html',
+ 								reportFiles: 'myreport.html',
+ 								reportName: 'JUNIT TEST CASES',
+ 								reportTitles: 'JUNIT TEST CASES'
+ 								]
+ 							  )
       				}
       			}
         		stage('CodeQualityChecks - SolarQube Analysis'){
@@ -63,12 +75,21 @@ pipeline {
       				      		withSonarQubeEnv('sonarqube'){
       								sh "${scannerHome}/bin/sonar-scanner -Dproject.settings=sonar-project.properties "
       							}
-      					      	timeout(time: 10, unit: 'MINUTES'){
-      								waitForQualityGate abortPipeline: true
-      							}
 
       				}
         		}
+        		 stage('Quality Gate'){
+      			  		steps{
+        		      		timeout(time: 10, unit: 'MINUTES'){
+      								def qg = waitForQualityGate() 
+      								if (qg.status != 'OK') {
+      									error "Pipeline aborted due to quality gate failure: ${qg.status}"
+    								}
+      								//abortPipeline: true
+      						}
+      					}
+      			}
+
         		//publish code quality report step is pending
         		
         		//Archieve using jenkins
