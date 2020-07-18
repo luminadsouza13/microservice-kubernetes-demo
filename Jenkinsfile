@@ -82,7 +82,7 @@ pipeline {
       								if (qg.status != 'OK') {
       									error "Pipeline aborted due to quality gate failure: ${qg.status}"
       									currentBuild.result = "FAILURE"
-      									slackSend (channel: '#release_notify', color: '#F01717', message: "*$JOB_NAME*, <$BUILD_URL|Build #$BUILD_NUMBER>: Code coverage threshold was not met! <http://localhost:9000/sonarqube/projects|Review in SonarQube>.")
+      									slackSend (channel: '#release_notify', color: '#F01717', message: "*$JOB_NAME*, <$BUILD_URL|Build #$BUILD_NUMBER>: Code coverage thresholds was not met! <http://localhost:9000/sonarqube/projects|Review in SonarQube>.")
     								}
       								//abortPipeline: true
       						}
