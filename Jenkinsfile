@@ -76,14 +76,13 @@ pipeline {
       								sh "${scannerHome}/bin/sonar-scanner -Dproject.settings=sonar-project.properties "
       							}
 
-      				}
-        		}
-        		 stage('Quality Gate'){
-      			  		steps{
         		      		timeout(time: 10, unit: 'MINUTES'){
       								def qg = waitForQualityGate() 
+      								print "Finished waiting"
       								if (qg.status != 'OK') {
       									error "Pipeline aborted due to quality gate failure: ${qg.status}"
+      									currentBuild.result = "FAILURE"
+      									slackSend (channel: '#release_notify', color: '#F01717', message: "*$JOB_NAME*, <$BUILD_URL|Build #$BUILD_NUMBER>: Code coverage threshold was not met! <http://localhost:9000/sonarqube/projects|Review in SonarQube>.")
     								}
       								//abortPipeline: true
       						}
