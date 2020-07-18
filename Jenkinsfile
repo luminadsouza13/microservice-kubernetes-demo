@@ -124,7 +124,7 @@ pipeline {
                     steps {
                         script{
                                 //  attachments = attachments()
-                            slackSend color: "good", message: "Click the link below to approve the PROD Build  http://localhost:3000/blue/organizations/jenkins/Pipeline-simple/detail/groovy/${currentBuild.number}/pipeline ", channel: "#release_notify"
+                            slackSend color: "good", message: "Click the link below to approve the PROD Build  http://localhost:3000/blue/organizations/jenkins/{env.JOB_NAME}/detail/groovy/${currentBuild.number}/pipeline ", channel: "#release_notify"
                         }
                     }
         }
