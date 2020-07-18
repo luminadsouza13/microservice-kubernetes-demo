@@ -73,11 +73,11 @@ function toggleDisplay(elementId) {
 <th>Time</th></tr>
 <tr class="b">
 <td>8</td>
+<td>4</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
-<td>13.217</td></tr></table><br />
+<td>50%</td>
+<td>13.996</td></tr></table><br />
 <p>Note: failures are anticipated and checked for with assertions while errors are unanticipated.</p><br /></section><section>
 <h2><a name="Package_List"></a>Package List</h2><a name="Package_List"></a>
 <p>[<a href="#Summary">Summary</a>] [<a href="#Package_List">Package List</a>] [<a href="#Test_Cases">Test Cases</a>]</p><br />
@@ -97,15 +97,15 @@ function toggleDisplay(elementId) {
 <td>0</td>
 <td>0</td>
 <td>100%</td>
-<td>9.853</td></tr>
+<td>10.364</td></tr>
 <tr class="a">
 <td><a href="#com.ewolff.microservice.customer">com.ewolff.microservice.customer</a></td>
 <td>5</td>
+<td>4</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
-<td>3.364</td></tr></table><br />
+<td>20%</td>
+<td>3.632</td></tr></table><br />
 <p>Note: package statistics are not computed recursively, they only sum up all of its testsuites numbers.</p><section>
 <h3><a name="com.ewolff.microservice.customer.cdc"></a>com.ewolff.microservice.customer.cdc</h3><a name="com.ewolff.microservice.customer.cdc"></a>
 <table border="1" class="bodyTable">
@@ -126,7 +126,7 @@ function toggleDisplay(elementId) {
 <td>0</td>
 <td>0</td>
 <td>100%</td>
-<td>9.853</td></tr></table></section><section>
+<td>10.364</td></tr></table></section><section>
 <h3><a name="com.ewolff.microservice.customer"></a>com.ewolff.microservice.customer</h3><a name="com.ewolff.microservice.customer"></a>
 <table border="1" class="bodyTable">
 <tr class="a">
@@ -139,52 +139,149 @@ function toggleDisplay(elementId) {
 <th>Success Rate</th>
 <th>Time</th></tr>
 <tr class="b">
-<td><a href="#com.ewolff.microservice.customer.CustomerWebIntegrationTest"><figure><img src="images/icon_success_sml.gif" alt="" /></figure></a></td>
+<td><a href="#com.ewolff.microservice.customer.CustomerWebIntegrationTest"><figure><img src="images/icon_error_sml.gif" alt="" /></figure></a></td>
 <td><a href="#com.ewolff.microservice.customer.CustomerWebIntegrationTest">CustomerWebIntegrationTest</a></td>
 <td>5</td>
+<td>4</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
-<td>3.364</td></tr></table></section><br /></section><section>
+<td>20%</td>
+<td>3.632</td></tr></table></section><br /></section><section>
 <h2><a name="Test_Cases"></a>Test Cases</h2><a name="Test_Cases"></a>
 <p>[<a href="#Summary">Summary</a>] [<a href="#Package_List">Package List</a>] [<a href="#Test_Cases">Test Cases</a>]</p><section>
 <h3><a name="CustomerWebIntegrationTest"></a>CustomerWebIntegrationTest</h3><a name="com.ewolff.microservice.customer.CustomerWebIntegrationTest"></a>
 <table border="1" class="bodyTable">
 <tr class="a">
-<td><figure><img src="images/icon_success_sml.gif" alt="" /></figure></td>
-<td><a name="TC_com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsSubmittedCustomerSaved"></a>IsSubmittedCustomerSaved</td>
-<td>0.834</td></tr>
+<td><a href="#com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsSubmittedCustomerSaved"><figure><img src="images/icon_error_sml.gif" alt="" /></figure></a></td>
+<td><a name="TC_com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsSubmittedCustomerSaved"></a><a href="#com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsSubmittedCustomerSaved">IsSubmittedCustomerSaved</a>
+<div class="detailToggle" style="display:inline"><a href="javascript:toggleDisplay('com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsSubmittedCustomerSaved');"><span style="display:inline;" id="com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsSubmittedCustomerSaved-off"> + </span><span style="display:none;" id="com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsSubmittedCustomerSaved-on"> - </span>[ Detail ]</a></div></td>
+<td>0.421</td></tr>
 <tr class="b">
-<td><figure><img src="images/icon_success_sml.gif" alt="" /></figure></td>
-<td><a name="TC_com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerReturnedAsHTML"></a>IsCustomerReturnedAsHTML</td>
-<td>0.24</td></tr>
+<td></td>
+<td>500 : [{&quot;timestamp&quot;:&quot;2020-07-18T07:18:32.576+00:00&quot;,&quot;status&quot;:500,&quot;error&quot;:&quot;Internal Server Error&quot;,&quot;message&quot;:&quot;&quot;,&quot;path&quot;:&quot;/form.html&quot;}]</td>
+<td></td></tr>
+<tr class="a">
+<td></td>
+<td>
+<div id="com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsSubmittedCustomerSaved-error" style="display:none;">
+<div>
+<pre>org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 : [{&quot;timestamp&quot;:&quot;2020-07-18T07:18:32.576+00:00&quot;,&quot;status&quot;:500,&quot;error&quot;:&quot;Internal Server Error&quot;,&quot;message&quot;:&quot;&quot;,&quot;path&quot;:&quot;/form.html&quot;}]
+	at com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsSubmittedCustomerSaved(CustomerWebIntegrationTest.java:120)</pre></div></div></td>
+<td></td></tr>
+<tr class="b">
+<td><a href="#com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerReturnedAsHTML"><figure><img src="images/icon_error_sml.gif" alt="" /></figure></a></td>
+<td><a name="TC_com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerReturnedAsHTML"></a><a href="#com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerReturnedAsHTML">IsCustomerReturnedAsHTML</a>
+<div class="detailToggle" style="display:inline"><a href="javascript:toggleDisplay('com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerReturnedAsHTML');"><span style="display:inline;" id="com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerReturnedAsHTML-off"> + </span><span style="display:none;" id="com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerReturnedAsHTML-on"> - </span>[ Detail ]</a></div></td>
+<td>0.105</td></tr>
+<tr class="a">
+<td></td>
+<td>500 : [&lt;html&gt;&lt;body&gt;&lt;h1&gt;Whitelabel Error Page&lt;/h1&gt;&lt;p&gt;This application has no explicit mapping for /error, so you are seeing this as a fallback.&lt;/p&gt;&lt;div id='created'&gt;Sat Jul 18 03:18:32 EDT 2020&lt;/div&gt;&lt;div&gt;There was an unexpected error (type=Internal Server Error, status=500).&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;]</td>
+<td></td></tr>
+<tr class="b">
+<td></td>
+<td>
+<div id="com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerReturnedAsHTML-error" style="display:none;">
+<div>
+<pre>org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 : [&lt;html&gt;&lt;body&gt;&lt;h1&gt;Whitelabel Error Page&lt;/h1&gt;&lt;p&gt;This application has no explicit mapping for /error, so you are seeing this as a fallback.&lt;/p&gt;&lt;div id='created'&gt;Sat Jul 18 03:18:32 EDT 2020&lt;/div&gt;&lt;div&gt;There was an unexpected error (type=Internal Server Error, status=500).&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;]
+	at com.ewolff.microservice.customer.CustomerWebIntegrationTest.getForMediaType(CustomerWebIntegrationTest.java:47)
+	at com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerReturnedAsHTML(CustomerWebIntegrationTest.java:57)
+</pre></div></div></td>
+<td></td></tr>
 <tr class="a">
 <td><figure><img src="images/icon_success_sml.gif" alt="" /></figure></td>
 <td><a name="TC_com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerReturnedAsJSON"></a>IsCustomerReturnedAsJSON</td>
-<td>0.039</td></tr>
+<td>0.045</td></tr>
 <tr class="b">
-<td><figure><img src="images/icon_success_sml.gif" alt="" /></figure></td>
-<td><a name="TC_com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerFormDisplayed"></a>IsCustomerFormDisplayed</td>
-<td>0.024</td></tr>
+<td><a href="#com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerFormDisplayed"><figure><img src="images/icon_error_sml.gif" alt="" /></figure></a></td>
+<td><a name="TC_com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerFormDisplayed"></a><a href="#com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerFormDisplayed">IsCustomerFormDisplayed</a>
+<div class="detailToggle" style="display:inline"><a href="javascript:toggleDisplay('com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerFormDisplayed');"><span style="display:inline;" id="com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerFormDisplayed-off"> + </span><span style="display:none;" id="com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerFormDisplayed-on"> - </span>[ Detail ]</a></div></td>
+<td>0.047</td></tr>
 <tr class="a">
-<td><figure><img src="images/icon_success_sml.gif" alt="" /></figure></td>
-<td><a name="TC_com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerListReturned"></a>IsCustomerListReturned</td>
-<td>0.058</td></tr></table></section><section>
+<td></td>
+<td>500 : [{&quot;timestamp&quot;:&quot;2020-07-18T07:18:32.809+00:00&quot;,&quot;status&quot;:500,&quot;error&quot;:&quot;Internal Server Error&quot;,&quot;message&quot;:&quot;&quot;,&quot;path&quot;:&quot;/form.html&quot;}]</td>
+<td></td></tr>
+<tr class="b">
+<td></td>
+<td>
+<div id="com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerFormDisplayed-error" style="display:none;">
+<div>
+<pre>org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 : [{&quot;timestamp&quot;:&quot;2020-07-18T07:18:32.809+00:00&quot;,&quot;status&quot;:500,&quot;error&quot;:&quot;Internal Server Error&quot;,&quot;message&quot;:&quot;&quot;,&quot;path&quot;:&quot;/form.html&quot;}]
+	at com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerFormDisplayed(CustomerWebIntegrationTest.java:104)</pre></div></div></td>
+<td></td></tr>
+<tr class="a">
+<td><a href="#com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerListReturned"><figure><img src="images/icon_error_sml.gif" alt="" /></figure></a></td>
+<td><a name="TC_com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerListReturned"></a><a href="#com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerListReturned">IsCustomerListReturned</a>
+<div class="detailToggle" style="display:inline"><a href="javascript:toggleDisplay('com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerListReturned');"><span style="display:inline;" id="com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerListReturned-off"> + </span><span style="display:none;" id="com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerListReturned-on"> - </span>[ Detail ]</a></div></td>
+<td>0.049</td></tr>
+<tr class="b">
+<td></td>
+<td>500 : [{&quot;timestamp&quot;:&quot;2020-07-18T07:18:32.854+00:00&quot;,&quot;status&quot;:500,&quot;error&quot;:&quot;Internal Server Error&quot;,&quot;message&quot;:&quot;&quot;,&quot;path&quot;:&quot;/list.html&quot;}]</td>
+<td></td></tr>
+<tr class="a">
+<td></td>
+<td>
+<div id="com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerListReturned-error" style="display:none;">
+<div>
+<pre>org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 : [{&quot;timestamp&quot;:&quot;2020-07-18T07:18:32.854+00:00&quot;,&quot;status&quot;:500,&quot;error&quot;:&quot;Internal Server Error&quot;,&quot;message&quot;:&quot;&quot;,&quot;path&quot;:&quot;/list.html&quot;}]
+	at com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerListReturned(CustomerWebIntegrationTest.java:86)</pre></div></div></td>
+<td></td></tr></table></section><section>
 <h3><a name="CustomerConsumerDrivenContractTest"></a>CustomerConsumerDrivenContractTest</h3><a name="com.ewolff.microservice.customer.cdc.CustomerConsumerDrivenContractTest"></a>
 <table border="1" class="bodyTable">
 <tr class="a">
 <td><figure><img src="images/icon_success_sml.gif" alt="" /></figure></td>
 <td><a name="TC_com.ewolff.microservice.customer.cdc.CustomerConsumerDrivenContractTest.testFindAll"></a>testFindAll</td>
-<td>0.674</td></tr>
+<td>0.725</td></tr>
 <tr class="b">
 <td><figure><img src="images/icon_success_sml.gif" alt="" /></figure></td>
 <td><a name="TC_com.ewolff.microservice.customer.cdc.CustomerConsumerDrivenContractTest.testValidCustomerId"></a>testValidCustomerId</td>
-<td>0.084</td></tr>
+<td>0.08</td></tr>
 <tr class="a">
 <td><figure><img src="images/icon_success_sml.gif" alt="" /></figure></td>
 <td><a name="TC_com.ewolff.microservice.customer.cdc.CustomerConsumerDrivenContractTest.testGetOne"></a>testGetOne</td>
-<td>0.034</td></tr></table></section><br /></section>
+<td>0.034</td></tr></table></section><br /></section><section>
+<h2><a name="Failure_Details"></a>Failure Details</h2><a name="Failure_Details"></a>
+<p>[<a href="#Summary">Summary</a>] [<a href="#Package_List">Package List</a>] [<a href="#Test_Cases">Test Cases</a>]</p><br />
+<table border="1" class="bodyTable">
+<tr class="a">
+<td><figure><img src="images/icon_error_sml.gif" alt="" /></figure></td>
+<td><a name="com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsSubmittedCustomerSaved"></a>IsSubmittedCustomerSaved</td></tr>
+<tr class="b">
+<td></td>
+<td>org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 : [{&quot;timestamp&quot;:&quot;2020-07-18T07:18:32.576+00:00&quot;,&quot;status&quot;:500,&quot;error&quot;:&quot;Internal Server Error&quot;,&quot;message&quot;:&quot;&quot;,&quot;path&quot;:&quot;/form.html&quot;}]</td></tr>
+<tr class="a">
+<td></td>
+<td>
+<div id="IsSubmittedCustomerSaved-error">com.ewolff.microservice.customer.CustomerWebIntegrationTest:120</div></td></tr>
+<tr class="b">
+<td><figure><img src="images/icon_error_sml.gif" alt="" /></figure></td>
+<td><a name="com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerReturnedAsHTML"></a>IsCustomerReturnedAsHTML</td></tr>
+<tr class="a">
+<td></td>
+<td>org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 : [&lt;html&gt;&lt;body&gt;&lt;h1&gt;Whitelabel Error Page&lt;/h1&gt;&lt;p&gt;This application has no explicit mapping for /error, so you are seeing this as a fallback.&lt;/p&gt;&lt;div id='created'&gt;Sat Jul 18 03:18:32 EDT 2020&lt;/div&gt;&lt;div&gt;There was an unexpected error (type=Internal Server Error, status=500).&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;]</td></tr>
+<tr class="b">
+<td></td>
+<td>
+<div id="IsCustomerReturnedAsHTML-error">com.ewolff.microservice.customer.CustomerWebIntegrationTest:57</div></td></tr>
+<tr class="a">
+<td><figure><img src="images/icon_error_sml.gif" alt="" /></figure></td>
+<td><a name="com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerFormDisplayed"></a>IsCustomerFormDisplayed</td></tr>
+<tr class="b">
+<td></td>
+<td>org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 : [{&quot;timestamp&quot;:&quot;2020-07-18T07:18:32.809+00:00&quot;,&quot;status&quot;:500,&quot;error&quot;:&quot;Internal Server Error&quot;,&quot;message&quot;:&quot;&quot;,&quot;path&quot;:&quot;/form.html&quot;}]</td></tr>
+<tr class="a">
+<td></td>
+<td>
+<div id="IsCustomerFormDisplayed-error">com.ewolff.microservice.customer.CustomerWebIntegrationTest:104</div></td></tr>
+<tr class="b">
+<td><figure><img src="images/icon_error_sml.gif" alt="" /></figure></td>
+<td><a name="com.ewolff.microservice.customer.CustomerWebIntegrationTest.IsCustomerListReturned"></a>IsCustomerListReturned</td></tr>
+<tr class="a">
+<td></td>
+<td>org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 : [{&quot;timestamp&quot;:&quot;2020-07-18T07:18:32.854+00:00&quot;,&quot;status&quot;:500,&quot;error&quot;:&quot;Internal Server Error&quot;,&quot;message&quot;:&quot;&quot;,&quot;path&quot;:&quot;/list.html&quot;}]</td></tr>
+<tr class="b">
+<td></td>
+<td>
+<div id="IsCustomerListReturned-error">com.ewolff.microservice.customer.CustomerWebIntegrationTest:86</div></td></tr></table><br /></section>
       </div>
     </div>
     <div class="clear">
