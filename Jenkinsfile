@@ -46,7 +46,7 @@ pipeline {
     stage('Build') {
             steps {
                 echo 'Run coverage and CLEAN UP Before please'
-              sh   'mvn clean package sonar:sonar site:site surefire-report:report -Dmaven.test.failure.ignore=true'
+             // sh   'mvn clean package sonar:sonar site:site surefire-report:report -Dmaven.test.failure.ignore=true'
             }
     }
     stage('Run Test cases , code quality check , Archieve using jenkins'){
