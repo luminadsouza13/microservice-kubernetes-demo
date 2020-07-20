@@ -12,6 +12,14 @@ fi;
 			fi
 
 echo $DOCKER_ACCOUNT
+
+GIT_REVISION=`git log -n 1 --pretty=format:'%h'`
+
+VERSION=$(date +%Y%mm%d%H%M%S).git.$GIT_REVISION
+
+echo $VERSION
+exit
+
 docker build --tag=microservice-kubernetes-demo-apache apache
 docker tag microservice-kubernetes-demo-apache $DOCKER_ACCOUNT/microservice-kubernetes-demo-apache:latest
 docker push $DOCKER_ACCOUNT/microservice-kubernetes-demo-apache
