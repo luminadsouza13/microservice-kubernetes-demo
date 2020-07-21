@@ -14,7 +14,6 @@ pipeline {
           echo "Deploy to QA? :: ${params.DEPLOY_QA}"
           echo "Deploy to UAT? :: ${params.DEPLOY_UAT}"
           echo "Deploy to PROD? :: ${params.DEPLOY_PROD}"
-          sh 'rm -rf target/*'
         }
 
       }
